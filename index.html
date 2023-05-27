@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <title>Personal Website WIP</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="header">
+    <div class="container">
+        <nav>
+            <!--inserts the logo on the bottom right of the webpage REMOVED from page-->
+            
+            <ul>
+                <!--this is the code that represents the navigation tabs-->
+                <li><a href="#header">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact Me</a></li>
+                
+
+            </ul>
+
+        </nav>
+        <!--adds header text to webpage-->
+        <div class="header-text">
+            <h1>Hello There I'm,</h1>
+        </div>
+    </div>
+</div>
+<!---------------------About section--------->
+<!--Adding information to the about tab on the webpage-->
+</div>
+<div id="about">
+    <div class="container">
+        <div class="row">
+            
+                <!--add images to the about tab-->
+                <img src="images/section.png">
+            </div>
+            <div class="about-col-2"></div>
+            <center><font size="7">About Me</center>
+            <center> <font size="3">
+                My name is Shelby Franklin. 
+                I am a graduate student studying at Louisiana State University Shreveport. 
+                I received my Bachelor's degree in Biology from Louisiana Tech University in November of 2022. 
+                I found my passion for coding my last 2 quarters of undergrad. 
+                I absolutely enjoy coding , so much that I decided to pursue a Masters degree in Computer Systems Technology concentrating in Computer Science. 
+                I am actively learning Javascript, SQL, Java, HTML, CSS, and Python.
+                I enjoy learning and I am always willing to learn new things especially if it pertains to coding.
+                I also have an eye for design, I love to make things look nice and crisp. 
+                My ultimate goal is to become a proficient and detailed developer and to pursue a career as a web developer.</center>
+        </div>
+    </div>
+</div> 
+<!---------------------Portfolio----------->
+<!--flashcards/to-do list/-->
+<div id="portfolio">
+    <div class="container">
+        <center class="sub-title">My Work</center>
+        <div class="work-list">
+            <div class="work">
+                <img src="images/tic.png">
+                <div class="layer">
+                    <h3>Play a Game of Tic Tac Toe</h3>
+                    <p>Simple <a href="https://scf9199.github.io/Tic-Tac-Toe/">Tic Tac Toe</a>  Game I created using HTML, CSS, and JS.</p>
+                   
+                    
+                </div>
+            </div>
+            <div class="work">   
+                <img src="images/message.png">
+                <div class="layer">
+                <h3>Try a Simple Responsive Tool</h3>
+                <p>Try <a href="https://scf9199.github.io/Pass-The-Message/">"Pass The Message"</a> a responsive design project created using HTML, CSS, and JS.</p>
+            </div>
+                
+            </div>
+            <div class="work">
+                <img src="images/quiz.png">
+                <div class="layer">
+                <h3>Try a simple quiz on Computer Networks</h3>
+                <p>Try <a href="https://scf9199.github.io/Quiz-App/">"A Quiz App"</a> a functional app on computer networks that was created using HTML, CSS, and JS.</p>
+
+                    
+                </div>
+                
+            </div>
+
+        </div>
+
+    </div>
+</div>
+<!-------------------contact section----------->
+<div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left"></div>
+            <center>
+            <h1 class="sub-title">Contact Me</h1>
+            <p></i>scfranklin1999@gmail.com</p>
+            <p>318-572-1201</p>
+        </center>
+            <div class="social-icons">
+              <!--  <a href=""><i class="fab fa-facebook"></i></a>
+                <a href=""><i class="fab fa-linkedin"></i></a> -->
+                
+            </div>
+            <div class="contact-right">
+                <form name="submit-to-google-sheet">
+                    <center>
+                    <input type="text" name="Name" placeholder="Your Name" required>
+                    <input type="email" name="Email" placeholder="Your Email" required>
+                    <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                    <button type="submit" class="btn btn2">Submit</button>  
+                </center>
+                </form>
+                <span id="msg"></span>
+            </div>
+
+            
+        </div>
+    </div>
+</div>
+<div class="copyright">
+    <p>Copyright © Made by Shelby C. Franklin 🖤</p>
+</div>
+
+
+            
+
+                
+        
+                
+
+            
+        </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+</body>
+<script>
+    const scriptURL = '<https://script.google.com/macros/s/AKfycbykGjye01TEMG1TsnzltyEtWzcv_qtQJf4h5zlUPSea3qK7tR9tyvk3sqJkJu3pe2Nb/exec>'
+    const form = document.forms['submit-to-google-sheet']
+    const msg = document.getElementById("msg")
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            msg.innerHTML = "Message sent sucessfully"
+            setTimeout(function(){
+                msg.innerHTML = ""
+            },5000)
+            form.reset()
+
+        })
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+</html>
